@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website pribadi bertema angkasa" />
+  <title>Nama Kamu | Penjelajah Angkasa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Latar bintang -->
+  <canvas id="stars"></canvas>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+
+  <!-- Navigasi -->
+  <header class="navbar">
+    <a href="#beranda" class="logo">🚀 NAMA<span>KAMU</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    <nav id="nav">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#skill">Skill</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Beranda -->
+    <section id="beranda" class="hero">
+      <div class="hero-text">
+        <p class="hello">Halo, Penjelajah! Saya</p>
+        <h1>Nama Kamu</h1>
+        <h2><span id="typing"></span><span class="cursor">|</span></h2>
+        <p class="desc">
+          Selamat datang di stasiun luar angkasa pribadi saya. Mari jelajahi
+          perjalanan, karya, dan cerita saya.
+        </p>
+        <div class="buttons">
+          <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+          <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="planet"></div>
+        <div class="orbit orbit-1"><span class="moon"></span></div>
+        <div class="orbit orbit-2"><span class="moon small"></span></div>
+        <div class="astronaut">👨‍🚀</div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="section reveal">
+      <h3 class="section-title">Tentang Saya</h3>
+      <div class="about-grid">
+        <div class="card">
+          <p>
+            Saya <strong>Nama Kamu</strong>, seorang <strong>[profesi/pelajar]</strong>
+            yang tinggal di <strong>[kota]</strong>. Saya suka belajar hal baru,
+            membangun sesuatu, dan memandang langit malam yang penuh bintang.
+          </p>
+          <p>
+            Ganti teks ini dengan cerita singkat tentang diri kamu: latar
+            belakang, hobi, dan tujuan yang ingin dicapai.
+          </p>
+        </div>
+        <div class="stats">
+          <div class="stat card">
+            <span class="num" data-target="3">0</span><small>Tahun Belajar</small>
+          </div>
+          <div class="stat card">
+            <span class="num" data-target="10">0</span><small>Proyek</small>
+          </div>
+          <div class="stat card">
+            <span class="num" data-target="99">0</span><small>Cangkir Kopi ☕</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill -->
+    <section id="skill" class="section reveal">
+      <h3 class="section-title">Skill & Kemampuan</h3>
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-head"><span>HTML</span><span>90%</span></div>
+          <div class="bar"><div class="fill" data-width="90"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>CSS</span><span>80%</span></div>
+          <div class="bar"><div class="fill" data-width="80"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>JavaScript</span><span>70%</span></div>
+          <div class="bar"><div class="fill" data-width="70"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>Problem Solving</span><span>85%</span></div>
+          <div class="bar"><div class="fill" data-width="85"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="proyek" class="section reveal">
+      <h3 class="section-title">Misi & Proyek</h3>
+      <div class="projects">
+        <article class="card project">
+          <div class="icon">🪐</div>
+          <h4>Proyek Satu</h4>
+          <p>Deskripsi singkat tentang proyek pertama kamu.</p>
+          <a href="#" class="link">Lihat misi →</a>
+        </article>
+        <article class="card project">
+          <div class="icon">🛰️</div>
+          <h4>Proyek Dua</h4>
+          <p>Deskripsi singkat tentang proyek kedua kamu.</p>
+          <a href="#" class="link">Lihat misi →</a>
+        </article>
+        <article class="card project">
+          <div class="icon">☄️</div>
+          <h4>Proyek Tiga</h4>
+          <p>Deskripsi singkat tentang proyek ketiga kamu.</p>
+          <a href="#" class="link">Lihat misi →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="section reveal">
+      <h3 class="section-title">Kirim Sinyal</h3>
+      <form id="contactForm" class="card form">
+        <input type="text" id="name" placeholder="Nama kamu" required />
+        <input type="email" id="email" placeholder="Email kamu" required />
+        <textarea id="message" rows="5" placeholder="Pesan untuk saya..." required></textarea>
+        <button type="submit" class="btn btn-primary">Kirim Pesan 🚀</button>
+        <p id="formStatus" class="status"></p>
+      </form>
+      <div class="socials">
+        <a href="#">GitHub</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Nama Kamu · Dibuat dengan ❤️ di bawah bintang-bintang</p>
+  </footer>
+
+  <button id="toTop" aria-label="Kembali ke atas">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
